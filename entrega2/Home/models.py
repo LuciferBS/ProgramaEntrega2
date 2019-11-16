@@ -1,9 +1,10 @@
 from django.db import models
 from django.utils import timezone
 
-class News(models.Model):
+class Coment(models.Model):
     author= models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    content = models.TextField()
+    coment = models.TextField()
+    descri = models.TextField()
     published_date = models.DateTimeField(blank=True, null=True)
 
     def publish(self):
