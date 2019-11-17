@@ -7,80 +7,105 @@
 {% load static %}
 <html>
 	<head>
-		<title>Hielo by TEMPLATED</title>
+		<title>CualquierCosa.Com</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/principal.css' %}" />
 	</head>
 	<body>
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<div class="logo"><a href="index.html">Hielo <span>by TEMPLATED</span></a></div>
+				<div class="logo"><a href="{% url 'coment_list' %}">CualquierCosa.Com <span>Noticias</span></a></div>
 				<a href="#menu">Menu</a>
 			</header>
 
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="generic.html">Generic</a></li>
-					<li><a href="elements.html">Elements</a></li>
+					<li><a href="{% url 'coment_list' %}">Home</a></li>
+					<li><a href="generic.html">Iniciar Sesion</a></li>
+					<li><a href="generic.html">Registrarse</a></li>
 				</ul>
 			</nav>
-
-		<!-- Banner -->
-
+			<!-- Banner -->
+			<section class="banner full">
+					<article>
+						<img src="{% static 'images/Dolar.jpg' %}" alt="" />
+						<div class="inner">
+							<header>
+								<p>El dolar se dispara, alcanzó los </p>
+								<h2>$809 clp</h2>
+							</header>
+						</div>
+					</article>
+					<article>
+						<img src="{% static 'images/incendio.jpg' %}" alt="" />
+						<div class="inner">
+							<header>
+								<p>Incendios forestales en valparaiso</p>
+								<h2>Alerta Roja</h2>
+							</header>
+						</div>
+					</article>
+					<article>
+						<img src="{% static 'images/Marcha.jpg' %}"  alt="" />
+						<div class="inner">
+							<header>
+								<p>Las protestas en chile no paran</p>
+								<h2>Nueva marcha en plaza Italia</h2>
+							</header>
+						</div>
+					</article>
+					<article>
+						<img src="{% static 'images/Iran.jpg' %}"  alt="" />
+						<div class="inner">
+							<header>
+								<p>En Iran protestan contra el alza de la gasolina</p>
+								<h2>Nueva Protesta</h2>
+							</header>
+						</div>
+					</article>
+					<article>
+						<img src="{% static 'images/slide05.jpg' %}"  alt="" />
+						<div class="inner">
+							<header>
+								<p>Ipsum dolor sed magna veroeros lorem ipsum</p>
+								<h2>Lorem adipiscing</h2>
+							</header>
+						</div>
+					</article>
+				</section>
 
 		<!-- One -->
 			<section id="one" class="wrapper style2">
 				<div class="inner">
 					<div class="grid-style">
-
+						{% for coments in coments %}
 						<div>
 							<div class="box">
 								<div class="image fit">
-									<img src="{% static 'images/pic02.jpg'%}" alt="" />
+										<img src="{% static 'images/pic02.jpg'%}" alt="" />
 								</div>
 								<div class="content">
 									<header class="align-center">
-										{% for coments in coments %}
 											<p>
 												publicado: {{coments.published_date}}
 											</p>
 											<h2>
 												{{coments.coment}}
+											</a>
 											</h2>
-										{% endfor %}
+										
 									</header>
-									{% for coments in coments %}
 										<p>{{coments.descri}}</p>
-									{% endfor %}
 									<footer class="align-center">
-										<a href="{% url 'generic' pk=coments.pk %}{{coments.coment}}" class="button alt">Learn More</a>
+										<a href="{% url 'detail' pk=coments.pk %}" class="button alt">Learn More</a>
 									</footer>
 								</div>
 							</div>
 						</div>
-
-						<div>
-							<div class="box">
-								<div class="image fit">
-									<img src="{% static 'images/pic03.jpg'%}" alt="" />
-								</div>
-								<div class="content">
-									<header class="align-center">
-										<p>mattis elementum sapien pretium tellus</p>
-										<h2>Vestibulum sit amet</h2>
-									</header>
-									<p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
-									<footer class="align-center">
-										<a href="#" class="button alt">Learn More</a>
-									</footer>
-								</div>
-							</div>
-						</div>
-
+						{% endfor %}
 					</div>
 				</div>
 			</section>
@@ -89,8 +114,8 @@
 			<section id="two" class="wrapper style3">
 				<div class="inner">
 					<header class="align-center">
-						<p>Nam vel ante sit amet libero scelerisque facilisis eleifend vitae urna</p>
-						<h2>Morbi maximus justo</h2>
+						<p>Seccion de entretenimiento</p>
+						<h2>Memes</h2>
 					</header>
 				</div>
 			</section>
@@ -99,8 +124,8 @@
 			<section id="three" class="wrapper style2">
 				<div class="inner">
 					<header class="align-center">
-						<p class="special">Nam vel ante sit amet libero scelerisque facilisis eleifend vitae urna</p>
-						<h2>Morbi maximus justo</h2>
+						<p class="special">Videos y memes virales</p>
+						<h2>Lo más viral en chile</h2>
 					</header>
 					<div class="gallery">
 						<div>
@@ -144,11 +169,11 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
 
 	</body>
 </html>
