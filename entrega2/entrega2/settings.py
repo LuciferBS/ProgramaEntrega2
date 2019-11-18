@@ -124,3 +124,5 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'coment_list'
 LOGOUT_REDIRECT_URL = '/login'
 #STATIC_ROOT = os.path.join(Home, 'static')
+
+

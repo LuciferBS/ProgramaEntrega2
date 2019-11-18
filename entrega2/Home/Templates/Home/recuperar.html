@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <style>
@@ -34,22 +33,18 @@ div {
 
 <div>
   <form method="POST" action="{% url 'login' %}">
-    {% csrf_token %}
-    {{ form.username.label_tag }}
-    {{ form.username }}
+    {{ form.as_p }}
+    <p>
+      
+    </p>
+    
 
-    {{ form.password.label_tag }}
-    {{ form.password }}
-
-    {{ form.errors }}
+    
   
-    <input type="submit" value="Login">
+    <input type="submit" value="Recuperar">
   </form>
   
-  <a href="{% url 'recuperar' %}" >
-    Recuperar constraseña
-  </a>
-</h>
+
 </div>
 
 </body>
