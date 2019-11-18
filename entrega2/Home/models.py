@@ -4,7 +4,7 @@ from django.utils.translation import ugettext as _
 
 class Coment(models.Model):
     author= models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    coment = models.TextField()
+    coment = models.CharField(max_length=50)
     descri = models.TextField()
     published_date = models.DateTimeField(blank=True, null=True)
 

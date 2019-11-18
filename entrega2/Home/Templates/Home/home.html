@@ -25,12 +25,12 @@
 				<ul class="links">
 					{% if user.is_authenticated %}
                     <li><a href="{% url 'coment_list' %}">Home</a></li>
-                    <li><a href="{% url 'logout' %}">Administrar noticias</a></li>
+                    <li><a href="{% url 'news_new' %}">Administrar noticias</a></li>
                     <li><a href="{% url 'logout' %}">Salir</a></li>
                     
 					{% else %}
 					<li><a href="{% url 'login' %}">Iniciar Sesion</a></li>
-					<li><a href="generic.html">Registrarse</a></li>
+					
 					{% endif %}
 					
 				</ul>
@@ -74,11 +74,11 @@
 						</div>
 					</article>
 					<article>
-						<img src="{% static 'images/slide05.jpg' %}"  alt="" />
+						<img src="{% static 'images/piñiñi.jpg' %}"  alt="" />
 						<div class="inner">
 							<header>
-								<p>Ipsum dolor sed magna veroeros lorem ipsum</p>
-								<h2>Lorem adipiscing</h2>
+								<p>Presidente Piñera promete "verdad y justicia":</p>
+								<h2>No habrá impunidad</h2>
 							</header>
 						</div>
 					</article>
@@ -138,22 +138,22 @@
 					<div class="gallery">
 						<div>
 							<div class="image fit">
-								<a href="#"><img src="{% static 'images/pic01.jpg'%}" alt="" /></a>
+								<a href="#"><img src="{% static 'images/meme1.jpg'%}" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="#"><img src="{% static 'images/pic02.jpg'%}" alt="" /></a>
+								<a href="#"><img src="{% static 'images/meme2.jpg'%}" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="#"><img src="{% static 'images/pic03.jpg'%}" alt="" /></a>
+								<a href="#"><img src="{% static 'images/meme3.jpg'%}" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="#"><img src="{% static 'images/pic04.jpg'%}" alt="" /></a>
+								<a href="#"><img src="{% static 'images/meme4.jpg'%}" alt="" /></a>
 							</div>
 						</div>
 					</div>
@@ -172,7 +172,7 @@
 					</ul>
 				</div>
 				<div class="copyright">
-					&copy; Untitled. All rights reserved.
+					&copy; CualquierCosa. All rights reserved.
 				</div>
 			</footer>
 
