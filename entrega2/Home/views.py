@@ -3,6 +3,7 @@ from .models import Coment
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import logout as do_logout
+from .forms import Recup
 
 def news_list(request):
     user = request.user
@@ -19,6 +20,10 @@ def detalle(request, pk):
 def logout(request):
     do_logout(request)
     return redirect('/')
+
+def recuperar(request):
+    form = Recup()
+    return render(request, 'Home/recuperar.html', {'form': form})
 
 
     
