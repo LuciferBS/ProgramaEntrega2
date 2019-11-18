@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Home.apps.HomeConfig',
+    'entrega2',
 ]
 
 MIDDLEWARE = [
@@ -119,4 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = 'coment_list'
+LOGOUT_REDIRECT_URL = '/login'
 #STATIC_ROOT = os.path.join(Home, 'static')

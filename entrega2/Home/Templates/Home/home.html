@@ -24,8 +24,10 @@
 			<nav id="menu">
 				<ul class="links">
 					{% if user.is_authenticated %}
-					<li><a href="{% url 'coment_list' %}">Home</a></li>
-					<li><a href="{% url 'logout' %}">Salir</a></li>
+                    <li><a href="{% url 'coment_list' %}">Home</a></li>
+                    <li><a href="{% url 'logout' %}">Administrar noticias</a></li>
+                    <li><a href="{% url 'logout' %}">Salir</a></li>
+                    
 					{% else %}
 					<li><a href="{% url 'login' %}">Iniciar Sesion</a></li>
 					<li><a href="generic.html">Registrarse</a></li>
